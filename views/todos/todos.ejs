@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
-<%- include('./partials/header', {title: 'Home Page'}); %>
+<%- include('../partials/header', {title: 'Home Page'}); %>
 
 <body>
-  <% include ./partials/navbar %>
+  <% include ../partials/navbar %>
 
   <div class="container">
    <h1>Todos</h1>
+
+   <a href="/todos/create" class="btn btn-primary">+ Create</a>
+
    <table class="table table-bordered table-striped">
     <% for(var i=0; i < todos.length; i++) { %>
        <tr>
@@ -18,7 +21,7 @@
     </table>
   </div>
   
-  <% include ./partials/scripts %>
+  <% include ../partials/scripts %>
 </body>
 
 </html>

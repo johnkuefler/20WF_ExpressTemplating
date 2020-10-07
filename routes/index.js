@@ -28,13 +28,5 @@ router.get('/weather', function (req, res, next) {
   res.render('weather', weatherData);
 });
 
-router.get('/todos', function (req, res, next) {
-  axios.get('https://jsonplaceholder.typicode.com/todos/')
-    .then(function (response) {
-      console.log(response.data);
-      res.render('todos', { todos: response.data });
-    })
-});
-
 
 module.exports = router;
