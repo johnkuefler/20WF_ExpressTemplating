@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<%- include('../partials/header', {title: 'Home Page'}); %>
+
+<body>
+  <% include ../partials/navbar %>
+
+  <div class="container">
+   <h1>Animals</h1>
+
+   <a href="/animals/create" class="btn btn-primary">+ Create Animal</a>
+
+   <table class="table table-bordered table-striped">
+     <% for(var i=0; i < data.length; i++) { %>
+        <tr>
+         <td><%=data[i].species%></td>
+         <td><%=data[i].nickName%></td>
+         <td><%=data[i].enabled%></td>
+        </tr>
+     <% } %>
+     </table>
+  </div>
+  
+  <% include ../partials/scripts %>
+</body>
+
+</html>
