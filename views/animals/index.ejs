@@ -16,6 +16,8 @@
          <td><%=data[i].species%></td>
          <td><%=data[i].nickName%></td>
          <td><%=data[i].enabled%></td>
+         <td><a href="/animals/update?id=<%= data[i]._id %>">Update</a> | 
+          <a href="/animals/delete?id=<%= data[i]._id %>">Delete</a></td>
         </tr>
      <% } %>
      </table>

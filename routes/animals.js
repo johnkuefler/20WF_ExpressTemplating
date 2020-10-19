@@ -9,4 +9,11 @@ router.get('/create', animalsController.get_create_animal);
 
 router.post('/create', animalsController.post_create_animal);
 
+router.get('/update', animalsController.get_update);
+
+router.post('/update', animalsController.post_update);
+
+router.get('/delete', animalsController.get_delete);
+
+
 module.exports = router;
