@@ -10,20 +10,38 @@
 
    <a href="/animals/create" class="btn btn-primary">+ Create Animal</a>
 
-   <table class="table table-bordered table-striped">
+   <table id="animalTable" class="table table-bordered table-striped">
+    
+    <thead>
+      <tr>
+        <td>Species</td>
+        <td>Nickname</td>
+        <td>Enabled</td>
+        <td>Action</td>
+      </tr>
+    </thead>
+
      <% for(var i=0; i < data.length; i++) { %>
         <tr>
          <td><%=data[i].species%></td>
          <td><%=data[i].nickName%></td>
          <td><%=data[i].enabled%></td>
-         <td><a href="/animals/update?id=<%= data[i]._id %>">Update</a> | 
-          <a href="/animals/delete?id=<%= data[i]._id %>">Delete</a></td>
+         <td><a href="/animals/update?id=<%= data[i]._id %>"><img src="https://img.icons8.com/android/24/000000/edit.png"/></a> 
+          <a  href="/animals/delete?id=<%= data[i]._id %>" onclick="return confirm('Are you sure you want to delete this?')"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/trash.png"/></a></td>
         </tr>
      <% } %>
      </table>
   </div>
   
   <% include ../partials/scripts %>
+
+  <script type="text/javascript">
+    $(document).ready( function () {
+      $('#animalTable').DataTable({
+        responsive: true
+      });
+    });
+  </script>
 </body>
 
 </html>
