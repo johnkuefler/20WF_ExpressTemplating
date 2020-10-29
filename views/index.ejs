@@ -7,8 +7,11 @@
 
   <div class="container">
     <h1><%= title %></h1>
-    <p>Welcome <%= name %></p>
-    <p>Height: <%= attributes.height %> inches</p>
+   
+    <% if (locals.user) { %>
+      <p>Hello there <%= locals.user.email %></p>
+    <%}%>
+
   </div>
   
   <% include ./partials/scripts %>
